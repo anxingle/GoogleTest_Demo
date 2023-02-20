@@ -10,7 +10,8 @@ add_subdirectory(${GTEST_SOURCE_DIR})
 include_directories(${GTEST_SOURCE_DIR}/include)
 
 enable_testing()
-add_executable(hello_test hello_test.cc)
+aux_source_directory(./test DIR_TEST)
+add_executable(hello_test ${DIR_TEST})
 target_link_libraries(hello_test  GTest::gtest_main)
 
 include(GoogleTest)
